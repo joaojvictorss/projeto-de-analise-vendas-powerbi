@@ -1,0 +1,48 @@
+-- PROJETO: Dashboard de Análise de Vendas (Superstore)
+-- AUTOR: joãojictor
+-- FERRAMENTA: MySQL Workbench / Power BI
+
+1. Criação do Banco de Dados
+CREATE DATABASE IF NOT EXISTS projetovendas;
+USE projetovendas;
+
+2. Visualização rápida da tabela importada (dados crus)
+SELECT * FROM superstore_sales LIMIT 10;
+
+3. Tratamento e Conversão de Datas (ETL)
+SELECT 
+    order_id,
+    STR_TO_DATE(order_date, '%m/%d/%Y') AS order_date_format,
+    sales,
+    category,
+    sub_category,
+    customer_name
+FROM superstore_sales;
+
+4. Consultas Analíticas (KPIs e Métricas de Negócio)
+
+ A. Faturamento Total (Total de Vendas)
+SELECT 
+    SUM(sales) AS faturamento_total 
+FROM superstore_sales;
+
+ B. Total de Pedidos Únicos
+SELECT 
+    COUNT(DISTINCT order_id) AS total_pedidos 
+FROM superstore_sales;
+
+ C. Faturamento por Categoria de Produto
+SELECT 
+    category,
+    SUM(sales) AS total_vendas_categoria
+FROM superstore_sales
+GROUP BY category
+ORDER BY total_vendas_categoria DESC;
+
+ D. Faturamento por Subcategoria
+SELECT 
+    sub_category,
+    SUM(sales) AS total_vendas_subcategoria
+FROM superstore_sales
+GROUP BY sub_category
+ORDER BY total_vendas_subcategoria DESC;
