@@ -25,3 +25,5 @@ Projeto prático desenvolvido para portfólio de **Análise de Dados**, simuland
 
 ---
 *Desenvolvido por João Victor — Conecte-se comigo no LinkedIn! https://www.linkedin.com/in/jo%C3%A3o-victor-silva-dos-santos/
+
+<img width="1415" height="785" alt="Captura de tela 2026-09-10 163838" src="https://github.com/user-attachments/assets/cd22d27b-e2be-4f48-9c0d-d78eb4376f55" />
